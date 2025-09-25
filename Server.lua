@@ -11,9 +11,9 @@ export type RemoteSignal = {
 	instance: RemoteEvent,
 
 	Fire: (self: RemoteSignal, player: Player, ...any) -> (),
-	FireAll: (self: RemoteSignal, any) -> (),
-	Connect: (self: RemoteSignal, listener: (any) -> ()) -> (RBXScriptConnection),
-	Once: (self: RemoteSignal, listener: (any) -> ()) -> (RBXScriptConnection),
+	FireAll: (self: RemoteSignal, ...any) -> (),
+	Connect: (self: RemoteSignal, listener: (...any) -> ()) -> (RBXScriptConnection),
+	Once: (self: RemoteSignal, listener: (...any) -> ()) -> (RBXScriptConnection),
 	Destroy: (self: RemoteSignal) -> (),
 	FireClients: (self: RemoteSignal, players: {Player}, ...any) -> (),
 	FireFilter: (self: RemoteSignal, predicate: (player: Player) -> (boolean), ...any) -> ({Player})
