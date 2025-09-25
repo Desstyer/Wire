@@ -14,9 +14,9 @@ RemoteSignal.__index = RemoteSignal
 export type RemoteSignal = {
 	instance: RemoteEvent,
 
-	Fire: (self: RemoteSignal, any) -> (),
-	Connect: (self: RemoteSignal, listener: (any) -> ()) -> (RBXScriptConnection),
-	Once: (self: RemoteSignal, listener: (any) -> ()) -> (RBXScriptConnection)
+	Fire: (self: RemoteSignal, ...any) -> (),
+	Connect: (self: RemoteSignal, listener: (...any) -> ()) -> (RBXScriptConnection),
+	Once: (self: RemoteSignal, listener: (...any) -> ()) -> (RBXScriptConnection)
 }
 
 -- Checks if the provided parent already has an instance with the same name.
